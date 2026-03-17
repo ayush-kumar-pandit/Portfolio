@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200">
+
+<!-- Navbar -->
+<nav class="fixed w-full z-50 backdrop-blur bg-white/5 border-b border-white/10">
+  <div class="max-w-6xl mx-auto flex justify-between p-4">
+    <h1 class="font-semibold text-lg">Your Name</h1>
+
+    <div class="space-x-6 hidden md:block">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="h-screen flex items-center justify-center text-center">
+  <div class="fade-up">
+    <h1 class="text-5xl md:text-6xl font-bold">
+      Hi, I'm <span class="text-blue-400">Ayush Pandit</span> 👋
+    </h1>
+    <p class="mt-4 text-lg text-gray-400">
+      Full-Stack Developer | Data Analyst
+    </p>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 max-w-4xl mx-auto px-4">
+  <div class="fade-up">
+    <h2 class="text-3xl font-bold mb-4 text-blue-400">About Me</h2>
+    <p class="text-gray-400">
+      I build modern, responsive web applications with great UI/UX.
+    </p>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-20 bg-gray-800">
+  <div class="fade-up text-center">
+    <h2 class="text-3xl font-bold mb-10 text-blue-400">Skills</h2>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <span class="px-5 py-2 bg-gray-700 rounded-full hover:bg-blue-500 transition">HTML</span>
+      <span class="px-5 py-2 bg-gray-700 rounded-full hover:bg-blue-500 transition">CSS</span>
+      <span class="px-5 py-2 bg-gray-700 rounded-full hover:bg-blue-500 transition">JavaScript</span>
+      <span class="px-5 py-2 bg-gray-700 rounded-full hover:bg-blue-500 transition">React</span>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-20 max-w-6xl mx-auto px-4">
+  <h2 class="text-3xl font-bold text-center mb-12 text-blue-400 fade-up">Projects</h2>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105 transition">
+      <h3 class="text-xl font-semibold">Portfolio Website</h3>
+      <p class="text-gray-400 mt-2">React + Tailwind CSS</p>
+    </div>
+
+    <div class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105 transition">
+      <h3 class="text-xl font-semibold">Dashboard App</h3>
+      <p class="text-gray-400 mt-2">Analytics UI project</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="py-20 bg-gray-800">
+  <div class="max-w-4xl mx-auto px-4 fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-blue-400">Experience</h2>
+
+    <div class="space-y-6 border-l border-gray-700 pl-6">
+      <div>
+        <h3 class="text-xl font-semibold">Frontend Intern - Company Name</h3>
+        <p class="text-gray-500 text-sm">2024 - Present</p>
+        <p class="text-gray-400 mt-2">
+          Built responsive UI using React and improved performance by 30%.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold">Freelance Developer</h3>
+        <p class="text-gray-500 text-sm">2023 - 2024</p>
+        <p class="text-gray-400 mt-2">
+          Delivered multiple client websites with modern UI design.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="py-20 max-w-4xl mx-auto px-4">
+  <div class="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-blue-400">Education</h2>
+
+    <div class="space-y-6 border-l border-gray-700 pl-6">
+      <div>
+        <h3 class="text-xl font-semibold">Bachelor of Technology (B.Tech)</h3>
+        <p class="text-gray-500 text-sm">XYZ University | 2021 - 2025</p>
+        <p class="text-gray-400 mt-2">
+          Specialization in Computer Science.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold">Higher Secondary (12th)</h3>
+        <p class="text-gray-500 text-sm">ABC School | 2020 - 2021</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 max-w-4xl mx-auto px-4">
+  <div class="fade-up">
+    <h2 class="text-3xl font-bold mb-6 text-blue-400">Contact</h2>
+
+    <form class="space-y-4">
+      <input class="w-full p-3 rounded bg-gray-800 border border-gray-700" placeholder="Name">
+      <input class="w-full p-3 rounded bg-gray-800 border border-gray-700" placeholder="Email">
+      <textarea class="w-full p-3 rounded bg-gray-800 border border-gray-700" placeholder="Message"></textarea>
+
+      <button class="bg-blue-500 px-6 py-2 rounded hover:bg-blue-600 transition">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-6 border-t border-white/10">
+  <p class="text-gray-500">© 2026 Your Name</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
