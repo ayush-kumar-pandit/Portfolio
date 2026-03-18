@@ -1,267 +1,216 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ayush Kumar Pandit | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/fav_icon.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush Kumar Pandit | Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="assets/fav_icon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
-    <style>
-      html {
-        scroll-behavior: smooth;
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "Poppins", sans-serif; overflow-x: hidden; }
+
+    /* Animation Classes */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Custom Scrollbar for Chrome/Safari */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1f2937; }
+    ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200">
+  <div id="particles-js" class="fixed inset-0 -z-10"></div>
+
+  <nav class="fixed w-full z-50 backdrop-blur-md bg-gray-900/70 border-b border-white/10">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="font-bold text-xl tracking-tight text-blue-400">AKP.</h1>
+      
+      <div class="space-x-8 hidden md:flex font-medium">
+        <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-blue-400 transition-colors text-blue-400">Hire Me</a>
+      </div>
+
+      <div class="md:hidden text-gray-400 text-sm">Scroll for menu ↓</div>
+    </div>
+  </nav>
+
+  <section class="h-screen flex flex-col items-center justify-center text-center px-4">
+    <div class="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-500">Ayush Kumar Pandit</span> 👋</h1>
+      <p class="text-xl md:text-2xl text-gray-400 h-8">
+        I am a <span id="typing" class="text-white border-r-2 border-blue-500 pr-1"></span>
+      </p>
+      <div class="mt-10 flex gap-4 justify-center">
+        <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all">View Projects</a>
+        <a href="#contact" class="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-3 rounded-full font-semibold transition-all">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 max-w-4xl mx-auto px-6">
+    <div class="fade-up">
+      <h2 class="text-3xl font-bold text-blue-400 mb-6 flex items-center gap-2">
+        <span class="h-1 w-10 bg-blue-500 rounded"></span> About Me
+      </h2>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        Backend-focused Computer Science undergraduate with hands-on experience in building scalable server-side applications using **Python**. 
+        Strong in REST APIs, system design, and database integration. I enjoy translating complex business logic into efficient, clean code.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="py-24 bg-gray-800/50 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-6 text-center fade-up">
+      <h2 class="text-3xl font-bold text-blue-400 mb-12">Technical Toolkit</h2>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">Python</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">Django</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">Flask</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">MySQL</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">C++</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">Git</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">Pandas</span>
+        <span class="px-5 py-2 bg-gray-800 border border-white/10 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all cursor-default">Power BI</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-24 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-400 mb-16 fade-up">Featured Projects</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="fade-up group p-8 bg-gray-800/40 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all">
+        <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors">Agentic Monitoring</h3>
+        <p class="text-gray-400 mt-3 text-sm leading-relaxed">Real-time system monitoring with optimized Flask backends and automated alerting.</p>
+        <div class="mt-4 flex gap-2 text-xs font-mono text-blue-300">
+          <span>Python</span> <span>FastAPI</span>
+        </div>
+      </div>
+      <div class="fade-up group p-8 bg-gray-800/40 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all">
+        <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors">Online Compiler</h3>
+        <p class="text-gray-400 mt-3 text-sm leading-relaxed">Asynchronous code execution platform using Judge0 and scalable REST architecture.</p>
+        <div class="mt-4 flex gap-2 text-xs font-mono text-blue-300">
+          <span>Docker</span> <span>Flask</span>
+        </div>
+      </div>
+      <div class="fade-up group p-8 bg-gray-800/40 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all">
+        <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors">Employee Management</h3>
+        <p class="text-gray-400 mt-3 text-sm leading-relaxed">Full-cycle CRUD system with secure JWT authentication and MySQL integration.</p>
+        <div class="mt-4 flex gap-2 text-xs font-mono text-blue-300">
+          <span>MySQL</span> <span>Django</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="py-24 bg-gray-800/30">
+    <div class="max-w-4xl mx-auto px-6 fade-up">
+      <h2 class="text-3xl font-bold text-blue-400 mb-10">Professional Experience</h2>
+      <div class="relative border-l-2 border-blue-500/30 pl-8 ml-2">
+        <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-blue-500 shadow-[0_0_10px_#3b82f6]"></div>
+        <h3 class="text-xl font-bold">Intern — Jio Platforms Ltd</h3>
+        <p class="text-blue-400 text-sm font-medium">Sep 2025 - Oct 2025</p>
+        <ul class="mt-4 space-y-2 text-gray-400">
+          <li class="flex items-start gap-2"><span>▹</span> Developed backend services using Flask for system-critical metrics.</li>
+          <li class="flex items-start gap-2"><span>▹</span> Optimized API response times by implementing modular architecture.</li>
+          <li class="flex items-start gap-2"><span>▹</span> Collaborated in an Agile environment using Git for version control.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 max-w-4xl mx-auto px-6 text-center">
+    <div class="fade-up">
+      <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+      <p class="text-gray-400 mb-10">I'm currently looking for new opportunities. My inbox is always open!</p>
+      
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+        <a href="mailto:ayushpandit672@gmail.com" class="text-lg hover:text-blue-400 transition-colors">📧 ayushpandit672@gmail.com</a>
+        <a href="tel:+917974508581" class="text-lg hover:text-blue-400 transition-colors">📱 +91 7974508581</a>
+      </div>
+
+      <div class="flex justify-center gap-8">
+        <a href="https://github.com/ayush-kumar-pandit" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">GitHub</a>
+        <a href="https://www.linkedin.com/in/ayush-kumar-pandit/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">LinkedIn</a>
+        <a href="https://leetcode.com/u/ayush-kumar-pandit/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">LeetCode</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center border-t border-white/5">
+    <p class="text-gray-500 text-sm">© 2026 Ayush Kumar Pandit • Built with Python Heart & Tailwind</p>
+  </footer>
+
+  <script>
+    const texts = ["Backend Developer", "Python Enthusiast", "Data Analyst", "System Designer"];
+    let i = 0, j = 0, del = false;
+    const typingEl = document.getElementById("typing");
+
+    function type() {
+      const current = texts[i];
+      typingEl.textContent = current.substring(0, j);
+
+      let typingSpeed = del ? 50 : 120;
+
+      if (!del && j < current.length) {
+        j++;
+      } else if (del && j > 0) {
+        j--;
+      } else {
+        del = !del;
+        if (!del) i = (i + 1) % texts.length;
+        typingSpeed = del ? 1500 : 500; // Pause at full word
       }
-      body {
-        font-family: "Poppins", sans-serif;
-      }
+      setTimeout(type, typingSpeed);
+    }
+    document.addEventListener("DOMContentLoaded", type);
+  </script>
 
-      .fade-up {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease;
-      }
-      .fade-up.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
-  </head>
-
-  <body class="bg-gray-900 text-gray-200">
-    <!-- Particles -->
-    <div id="particles-js" class="fixed w-full h-full -z-10"></div>
-
-    <!-- Navbar -->
-    <nav
-      class="fixed w-full z-50 backdrop-blur bg-white/5 border-b border-white/10"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between p-4">
-        <h1 class="font-semibold">Ayush Kumar Pandit</h1>
-        <div class="space-x-6 hidden md:block">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="h-screen flex items-center justify-center text-center">
-      <div class="fade-up">
-        <h1 class="text-5xl font-bold">Hi, I'm Ayush Kumar Pandit👋</h1>
-        <p class="text-gray-400 mt-4">
-          <span id="typing" class="text-blue-400"></span>
-        </p>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-20 max-w-4xl mx-auto px-4">
-      <div class="fade-up">
-        <h2 class="text-3xl text-blue-400 mb-4">About Me</h2>
-        <p class="text-gray-400 leading-relaxed">
-          Backend-focused Computer Science undergraduate with hands-on
-          experience in building scalable server-side applications using Python.
-          Strong in REST APIs, system design, and database integration.
-          Passionate about solving complex problems and building efficient
-          backend systems.
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-20 bg-gray-800 text-center">
-      <div class="fade-up">
-        <h2 class="text-3xl text-blue-400 mb-10">Technical Skills</h2>
-        <div class="flex flex-wrap justify-center gap-4">
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Python</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >C/C++</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >MySQL</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Django</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Flask</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >NumPy</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Pandas</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Power BI</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Git</span
-          >
-          <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500"
-            >Postman</span
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-20 max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl text-center text-blue-400 mb-12 fade-up">Projects</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div
-          class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105"
-        >
-          <h3 class="text-xl font-semibold">Agentic Monitoring System</h3>
-          <p class="text-gray-400 mt-2">
-            Designed backend services for real-time system monitoring with
-            optimized APIs.
-          </p>
-        </div>
-        <div
-          class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105"
-        >
-          <h3 class="text-xl font-semibold">Online Compiler</h3>
-          <p class="text-gray-400 mt-2">
-            Built scalable REST APIs for asynchronous code execution using Flask
-            and Judge0.
-          </p>
-        </div>
-
-        <div
-          class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105"
-        >
-          <h3 class="text-xl font-semibold">Employee Management System</h3>
-          <p class="text-gray-400 mt-2">
-            Developed CRUD backend with MySQL and authentication system.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="py-20 bg-gray-800">
-      <div class="max-w-4xl mx-auto px-4 fade-up">
-        <h2 class="text-3xl text-blue-400 mb-8">Experience</h2>
-
-        <div class="border-l border-gray-700 pl-6">
-          <h3 class="text-xl font-semibold">Intern - Jio Platforms Ltd</h3>
-          <p class="text-gray-500 text-sm">Sep 2025 - Oct 2025</p>
-
-          <ul class="list-disc ml-5 text-gray-400 mt-2">
-            <li>Developed backend services using Flask</li>
-            <li>Built REST APIs for real-time system metrics</li>
-            <li>Improved performance via modular architecture</li>
-            <li>Worked in Agile environment with Git workflows</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="py-20 max-w-4xl mx-auto px-4">
-      <div class="fade-up">
-        <h2 class="text-3xl text-blue-400 mb-8">Education</h2>
-
-        <div class="space-y-6">
-          <div class="p-6 bg-gray-800 rounded-lg border border-gray-700">
-            <h3 class="text-xl font-semibold">B.Tech Computer Science</h3>
-            <p class="text-gray-400">Bansal Institute, Bhopal (2023–2027)</p>
-          </div>
-
-          <div class="p-6 bg-gray-800 rounded-lg border border-gray-700">
-            <h3 class="text-xl font-semibold">Higher Secondary (PCM)</h3>
-            <p class="text-gray-400">C.L. Arya School (2023)</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-20 max-w-4xl mx-auto px-4">
-      <div class="fade-up">
-        <h2 class="text-3xl text-blue-400 mb-6">Contact</h2>
-
-        <a href="mailto:ayushpandit672@gmail.com" class="text-gray-400 mb-4">📧 ayushpandit672@gmail.com</a><br>
-        <a href="tel:+917974508581" class="text-gray-400 mb-4">📱 +91 7974508581</a>
-
-        <div class="flex gap-4">
-          <a href="https://github.com/ayush-kumar-pandit" class="text-blue-400"
-            >GitHub</a
-          >
-          <a
-            href="https://www.linkedin.com/in/ayush-kumar-pandit/"
-            class="text-blue-400"
-            >LinkedIn</a
-          >
-          <a
-            href="https://leetcode.com/u/ayush-kumar-pandit/"
-            class="text-blue-400"
-            >LeetCode</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <footer class="text-center py-6 border-t border-white/10">
-      <p class="text-gray-500">© 2026 Ayush Kumar Pandit</p>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-      const texts = ["Data Analyst", "Backend Developer", "Python Developer"];
-      let i = 0,
-        j = 0,
-        cur = "",
-        del = false;
-      function type() {
-        cur = texts[i];
-        document.getElementById("typing").textContent = cur.substring(0, j);
-        if (!del && j < cur.length) {
-          j++;
-        } else if (del && j > 0) {
-          j--;
-        } else {
-          del = !del;
-          if (!del) i = (i + 1) % texts.length;
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
         }
-        setTimeout(type, del ? 50 : 100);
-      }
-      type();
-    </script>
-
-    <script>
-      const obs = new IntersectionObserver((e) => {
-        e.forEach((el) => {
-          if (el.isIntersecting) el.target.classList.add("show");
-        });
       });
-      document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
-    </script>
+    }, { threshold: 0.1 });
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 60 },
-          size: { value: 3 },
-          color: { value: "#3b82f6" },
-          line_linked: { enable: true, opacity: 0.3 },
-          move: { speed: 2 },
-        },
-      });
-    </script>
-  </body>
+    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 50, density: { enable: true, value_area: 800 } },
+        color: { value: "#3b82f6" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        line_linked: { enable: true, distance: 150, color: "#3b82f6", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 1.5, direction: "none", random: false, straight: false, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: false } }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
 </html>
