@@ -3,243 +3,275 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ayush Kumar Pandit | Portfolio</title>
+  <title>Ayush Kumar Pandit | Backend Engineer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: "Poppins", sans-serif; }
+    body { font-family: "Poppins", sans-serif; overflow-x: hidden; }
 
     .fade-up {
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .fade-up.show {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Animated Background Gradient */
+    .bg-gradient-mesh {
+      background-color: #111827;
+      background-image: 
+        radial-gradient(at 0% 0%, hsla(220,100%,15%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, hsla(210,100%,10%,1) 0, transparent 50%);
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(to right, #60a5fa, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 </head>
 
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-gradient-mesh text-gray-200">
 
-<!-- Particles -->
-<div id="particles-js" class="fixed w-full h-full -z-10"></div>
+<div id="particles-js" class="fixed inset-0 -z-10"></div>
 
-<!-- Navbar -->
-<nav class="fixed w-full z-50 backdrop-blur bg-white/5 border-b border-white/10">
-  <div class="max-w-6xl mx-auto flex justify-between p-4">
-    <h1 class="font-semibold">Ayush Kumar Pandit</h1>
-    <div class="space-x-6 hidden md:block">
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+<nav class="fixed w-full z-50 glass">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="font-bold text-xl tracking-tighter">AKP<span class="text-blue-500">.</span></h1>
+    <div class="space-x-8 hidden md:flex font-medium text-sm uppercase tracking-widest text-gray-400">
+      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
     </div>
+    <button class="md:hidden text-white">☰</button>
   </div>
 </nav>
 
-<!-- HERO + ABOUT -->
-<section class="min-h-screen flex items-center">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
+<section class="min-h-screen flex items-center pt-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center">
 
-    <!-- LEFT -->
     <div class="fade-up">
-      <h1 class="text-5xl font-bold leading-tight">
-        Hi, I'm <br/>
-        <span class="text-blue-400">Ayush Kumar Pandit 👋</span>
+      <h2 class="text-blue-500 font-semibold tracking-widest mb-2">AVAILABLE FOR INTERNSHIPS</h2>
+      <h1 class="text-6xl font-bold leading-tight">
+        Building the <br/>
+        <span class="text-gradient">Invisible Engine</span>
       </h1>
 
-      <p class="text-gray-400 mt-4 text-lg">
-        <span id="typing" class="text-blue-400"></span>
+      <p class="text-gray-400 mt-6 text-xl h-8">
+        I am a <span id="typing" class="text-white border-r-2 border-blue-500 pr-1"></span>
       </p>
 
-      <!-- ABOUT -->
-      <p class="text-gray-400 mt-6 leading-relaxed max-w-lg">
-        Backend-focused Computer Science undergraduate with hands-on experience 
-        in building scalable server-side applications using Python. Strong in REST APIs, 
-        system design, and database integration. Passionate about solving complex problems 
-        and building efficient backend systems.
+      <p class="text-gray-400 mt-8 leading-relaxed max-w-lg text-lg">
+        Computer Science undergraduate specializing in <b>scalable backend architectures</b>. 
+        I turn complex logic into efficient, maintainable Python code. 
       </p>
 
-      <!-- BUTTONS -->
-      <div class="mt-6 flex gap-4">
-        <a href="#projects" class="px-5 py-2 bg-blue-500 rounded hover:bg-blue-600 transition">
-          View Projects 🚀
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#projects" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all">
+          View Work
         </a>
-        <a href="#contact" class="px-5 py-2 border border-blue-400 rounded hover:bg-blue-500 transition">
-          Contact Me 📩
+        <a href="#contact" class="px-8 py-3 border border-gray-600 rounded-full hover:border-blue-400 transition-all">
+          Contact Me
         </a>
       </div>
     </div>
 
-    <!-- RIGHT (PHOTO) -->
-    <div class="flex justify-center md:justify-end fade-up">
+    <div class="relative flex justify-center md:justify-end fade-up">
+      <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25"></div>
       <img 
         src="assets/profile.jpg"
         alt="Ayush Kumar Pandit"
-        class="w-64 h-64 object-cover rounded-full border-4 border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105 transition duration-300"
+        class="relative w-72 h-72 object-cover rounded-full border-2 border-white/10 grayscale hover:grayscale-0 transition duration-500"
       />
     </div>
-
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="py-20 bg-gray-800 text-center">
-  <div class="fade-up">
-    <h2 class="text-3xl text-blue-400 mb-10">Technical Skills</h2>
-    <div class="flex flex-wrap justify-center gap-4">
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Python</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">C/C++</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">MySQL</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Django</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Flask</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">NumPy</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Pandas</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Power BI</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Git</span>
-      <span class="px-4 py-2 bg-gray-700 rounded hover:bg-blue-500">Postman</span>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="py-20 max-w-6xl mx-auto px-4">
-  <h2 class="text-3xl text-center text-blue-400 mb-12 fade-up">Projects</h2>
-
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105">
-      <h3 class="text-xl font-semibold">Agentic Monitoring System</h3>
-      <p class="text-gray-400 mt-2">
-        Designed backend services for real-time system monitoring with optimized APIs.
-      </p>
-    </div>
-
-    <div class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105">
-      <h3 class="text-xl font-semibold">Online Compiler</h3>
-      <p class="text-gray-400 mt-2">
-        Built scalable REST APIs for asynchronous code execution using Flask and Judge0.
-      </p>
-    </div>
-
-    <div class="fade-up p-6 bg-gray-800 rounded-xl border border-white/10 hover:scale-105">
-      <h3 class="text-xl font-semibold">Car Rental Website</h3>
-      <p class="text-gray-400 mt-2">
-        A full-stack car rental app with real-time listings, booking, and user authentication.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="py-20 bg-gray-800">
-  <div class="max-w-4xl mx-auto px-4 fade-up">
-    <h2 class="text-3xl text-blue-400 mb-8">Experience</h2>
-
-    <div class="border-l border-gray-700 pl-6">
-      <h3 class="text-xl font-semibold">Intern - Jio Platforms Ltd</h3>
-      <p class="text-gray-500 text-sm">Sep 2025 - Oct 2025</p>
-
-      <ul class="list-disc ml-5 text-gray-400 mt-2">
-        <li>Developed backend services using Flask</li>
-        <li>Built REST APIs for real-time system metrics</li>
-        <li>Improved performance via modular architecture</li>
-        <li>Worked in Agile environment with Git workflows</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="py-20 max-w-4xl mx-auto px-4">
-  <div class="fade-up">
-    <h2 class="text-3xl text-blue-400 mb-8">Education</h2>
-
-    <div class="space-y-6">
-      <div class="p-6 bg-gray-800 rounded-lg border border-gray-700">
-        <h3 class="text-xl font-semibold">B.Tech Computer Science</h3>
-        <p class="text-gray-400">Bansal Institute, Bhopal (2023–2027)</p>
-      </div>
-
-      <div class="p-6 bg-gray-800 rounded-lg border border-gray-700">
-        <h3 class="text-xl font-semibold">Higher Secondary (PCM)</h3>
-        <p class="text-gray-400">C.L. Arya School (2023)</p>
+<section id="skills" class="py-24 bg-black/20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <div class="fade-up">
+      <h2 class="text-3xl font-bold mb-4 text-white">Technical Arsenal</h2>
+      <p class="text-gray-500 mb-12">Tools and technologies I use to bring ideas to life</p>
+      
+      <div class="flex flex-wrap justify-center gap-3">
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Python</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Django</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Flask</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">MySQL</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">C++</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">REST APIs</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Docker</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Postman</div>
+        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Git</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="py-20 max-w-4xl mx-auto px-4">
-  <div class="fade-up">
-    <h2 class="text-3xl text-blue-400 mb-6">Contact</h2>
+<section id="projects" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="flex justify-between items-end mb-12 fade-up">
+    <div>
+      <h2 class="text-4xl font-bold text-white">Featured Projects</h2>
+      <div class="h-1 w-20 bg-blue-500 mt-2"></div>
+    </div>
+  </div>
 
-    <p class="text-gray-400">📧 ayushpandit672@gmail.com</p>
-    <p class="text-gray-400">📱 +91 7974508581</p>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="fade-up p-8 glass rounded-2xl hover:-translate-y-2 transition-all group">
+      <div class="text-blue-500 mb-4 text-3xl">🤖</div>
+      <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400">Agentic Monitoring</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-6">
+        Real-time system health dashboard with automated alerts. Optimized backend latency by 30%.
+      </p>
+      <div class="flex gap-4">
+        <a href="#" class="text-xs font-bold uppercase tracking-tighter text-blue-400 hover:text-white">GitHub ↗</a>
+        <a href="#" class="text-xs font-bold uppercase tracking-tighter text-blue-400 hover:text-white">Live Demo ↗</a>
+      </div>
+    </div>
 
-    <div class="flex gap-4 mt-4">
-      <a href="https://github.com/ayush-kumar-pandit" class="text-blue-400">GitHub</a>
-      <a href="https://www.linkedin.com/in/ayush-kumar-pandit/" class="text-blue-400">LinkedIn</a>
-      <a href="https://leetcode.com/u/ayush-kumar-pandit/" class="text-blue-400">LeetCode</a>
+    <div class="fade-up p-8 glass rounded-2xl hover:-translate-y-2 transition-all group">
+      <div class="text-blue-500 mb-4 text-3xl">💻</div>
+      <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400">Online Compiler</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-6">
+        Sandboxed code execution engine using Flask and Judge0 API. Supports 5+ languages.
+      </p>
+      <div class="flex gap-4">
+        <a href="#" class="text-xs font-bold uppercase tracking-tighter text-blue-400 hover:text-white">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="fade-up p-8 glass rounded-2xl hover:-translate-y-2 transition-all group">
+      <div class="text-blue-500 mb-4 text-3xl">🚗</div>
+      <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400">Car Rental API</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-6">
+        Robust booking system with JWT authentication and relational database schema design.
+      </p>
+      <div class="flex gap-4">
+        <a href="#" class="text-xs font-bold uppercase tracking-tighter text-blue-400 hover:text-white">GitHub ↗</a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer class="text-center py-6 border-t border-white/10">
-  <p class="text-gray-500">© 2026 Ayush Kumar Pandit</p>
+<section id="experience" class="py-24 bg-black/20">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center">Work Experience</h2>
+    
+    <div class="relative border-l-2 border-blue-500/30 ml-4 md:ml-0">
+      <div class="mb-12 ml-8 fade-up relative">
+        <div class="absolute -left-[41px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+        <div class="flex justify-between items-start flex-wrap gap-2">
+          <h3 class="text-xl font-bold">Jio Platforms Ltd.</h3>
+          <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Sep 2025 - Oct 2025</span>
+        </div>
+        <p class="text-blue-400 text-sm font-medium mb-4">Backend Intern</p>
+        <ul class="space-y-3 text-gray-400 text-sm">
+          <li class="flex gap-2"><span>•</span> Built high-performance REST APIs using Flask for system telemetry.</li>
+          <li class="flex gap-2"><span>•</span> Modularized legacy scripts reducing technical debt and improving readability.</li>
+          <li class="flex gap-2"><span>•</span> Participated in sprint planning and CI/CD workflows.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-24 max-w-4xl mx-auto px-6 text-center">
+  <div class="fade-up">
+    <h2 class="text-4xl font-bold text-white mb-6">Let's Build Something</h2>
+    <p class="text-gray-400 mb-10">I'm currently looking for new opportunities. My inbox is always open.</p>
+
+    <div class="grid sm:grid-cols-2 gap-4 mb-12">
+      <div class="p-6 glass rounded-2xl">
+        <p class="text-blue-400 text-sm mb-1">Email</p>
+        <p class="text-lg font-medium">ayushpandit672@gmail.com</p>
+      </div>
+      <div class="p-6 glass rounded-2xl">
+        <p class="text-blue-400 text-sm mb-1">Location</p>
+        <p class="text-lg font-medium">Bhopal, India</p>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-8">
+      <a href="https://github.com/ayush-kumar-pandit" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">GitHub</a>
+      <a href="https://linkedin.com/in/ayush-kumar-pandit" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">LinkedIn</a>
+      <a href="#" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="py-10 border-t border-white/5 text-center">
+  <p class="text-gray-600 text-sm">Designed & Built by Ayush Kumar Pandit © 2026</p>
 </footer>
 
-<!-- Typing Effect -->
-<script>
-const texts = ["Data Analyst", "Backend Developer", "Python Developer"];
-let i = 0, j = 0, cur = "", del = false;
-
-function type() {
-  cur = texts[i];
-  document.getElementById("typing").textContent = cur.substring(0, j);
-
-  if (!del && j < cur.length) j++;
-  else if (del && j > 0) j--;
-  else {
-    del = !del;
-    if (!del) i = (i + 1) % texts.length;
-  }
-
-  setTimeout(type, del ? 50 : 100);
-}
-type();
-</script>
-
-<!-- Scroll Animation -->
-<script>
-const obs = new IntersectionObserver((e) => {
-  e.forEach((el) => {
-    if (el.isIntersecting) el.target.classList.add("show");
-  });
-});
-document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
-</script>
-
-<!-- Particles -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 60 },
-    size: { value: 3 },
-    color: { value: "#3b82f6" },
-    line_linked: { enable: true, opacity: 0.3 },
-    move: { speed: 2 }
+  // Particles Configuration
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 40, density: { enable: true, value_area: 800 } },
+      color: { value: "#3b82f6" },
+      shape: { type: "circle" },
+      opacity: { value: 0.2 },
+      size: { value: 2 },
+      line_linked: { enable: true, distance: 150, color: "#3b82f6", opacity: 0.1, width: 1 },
+      move: { enable: true, speed: 1, direction: "none", random: true, out_mode: "out" }
+    }
+  });
+
+  // Smooth Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Typing Effect
+  const words = ["Backend Developer", "Python Enthusiast", "System Architect", "Problem Solver"];
+  let wordIdx = 0, charIdx = 0, isDeleting = false;
+
+  function type() {
+    const currentWord = words[wordIdx];
+    const typingEl = document.getElementById("typing");
+    
+    if (isDeleting) {
+      typingEl.textContent = currentWord.substring(0, charIdx--);
+    } else {
+      typingEl.textContent = currentWord.substring(0, charIdx++);
+    }
+
+    let typeSpeed = isDeleting ? 50 : 150;
+
+    if (!isDeleting && charIdx === currentWord.length + 1) {
+      isDeleting = true;
+      typeSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      wordIdx = (wordIdx + 1) % words.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
   }
-});
+  document.addEventListener("DOMContentLoaded", type);
 </script>
 
 </body>
 </html>
-```
