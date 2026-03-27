@@ -8,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 
-  
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: "Poppins", sans-serif; overflow-x: hidden; }
@@ -23,7 +22,6 @@
       transform: translateY(0);
     }
 
-    
     .bg-gradient-mesh {
       background-color: #111827;
       background-image: 
@@ -43,25 +41,12 @@
       -webkit-text-fill-color: transparent;
     }
 
-    
-    #cert-slider::-webkit-scrollbar {
-      height: 6px;
-    }
-    #cert-slider::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 10px;
-    }
-    #cert-slider::-webkit-scrollbar-thumb {
-      background: rgba(59, 130, 246, 0.3);
-      border-radius: 10px;
-    }
-    #cert-slider::-webkit-scrollbar-thumb:hover {
-      background: rgba(59, 130, 246, 0.6);
-    }
-    #cert-slider {
-      scrollbar-width: thin;
-      scrollbar-color: rgba(59, 130, 246, 0.3) rgba(255, 255, 255, 0.02);
-    }
+    /* Hide scrollbar for cleaner look but keep functionality */
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+    #cert-slider::-webkit-scrollbar { height: 4px; }
+    #cert-slider::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 10px; }
   </style>
 </head>
 
@@ -69,226 +54,187 @@
 
 <div id="particles-js" class="fixed inset-0 -z-10"></div>
 
-
 <nav class="fixed w-full z-50 glass">
-  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4 md:p-6">
     <h1 class="font-bold text-xl tracking-tighter">AYUSH PANDIT<span class="text-blue-500">.</span></h1>
+    
     <div class="space-x-8 hidden md:flex font-medium text-sm uppercase tracking-widest text-gray-400">
       <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
       <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
       <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
-      <a href="#certificate" class="hover:text-blue-400 transition">Certificate</a>
+      <a href="#certificate" class="hover:text-blue-400 transition">Certificates</a>
       <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
     </div>
-    <button class="md:hidden text-white">☰</button>
+
+    <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden flex-col bg-gray-900/95 border-b border-white/10 p-6 space-y-4 text-center uppercase text-sm tracking-widest font-semibold">
+    <a href="#skills" class="block py-2">Skills</a>
+    <a href="#projects" class="block py-2">Projects</a>
+    <a href="#experience" class="block py-2">Experience</a>
+    <a href="#certificate" class="block py-2">Certificates</a>
+    <a href="#contact" class="block py-2">Contact</a>
   </div>
 </nav>
 
-<section class="min-h-screen flex items-center pt-20">
+<section class="min-h-screen flex items-center pt-24 pb-12">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center">
-    <div class="fade-up">
-      <h2 class="text-blue-500 font-semibold tracking-widest mb-2">AVAILABLE FOR INTERNSHIPS, JOBS <BR>AND FREELANCING</h2>
-      <h1 class="text-6xl font-bold leading-tight">
+    <div class="relative flex justify-center fade-up w-56 h-56 md:w-80 md:h-80 mx-auto md:order-last">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-50"></div>
+      <img src="assets/profile.jpg" alt="Ayush Kumar Pandit" class="relative w-full h-full object-cover rounded-full border-2 border-white/10 shadow-2xl"/>
+    </div>
+
+    <div class="fade-up text-center md:text-left">
+      <h2 class="text-blue-500 font-semibold tracking-widest mb-4 text-xs md:text-sm uppercase">Available for Internships & Freelancing</h2>
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight">
         Hi, I am<br/>
         <span class="text-gradient">Ayush Pandit</span>
       </h1>
-      <p class="text-gray-400 mt-6 text-xl h-8">
+      <p class="text-gray-400 mt-6 text-lg md:text-xl min-h-[40px]">
         A <span id="typing" class="text-white border-r-2 border-blue-500 pr-1"></span>
       </p>
-      <p class="text-gray-400 mt-8 leading-relaxed max-w-lg text-lg">
+      <p class="text-gray-400 mt-6 leading-relaxed max-w-lg mx-auto md:mx-0 text-base md:text-lg">
         Computer Science undergraduate specializing in <b>scalable backend architectures</b>. 
         I turn complex logic into efficient, maintainable Python code. 
       </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a href="#projects" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all">View Work</a>
-        <a href="#contact" class="px-8 py-3 border border-gray-600 rounded-full hover:border-blue-400 transition-all">Contact Me</a>
+      <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+        <a href="#projects" class="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all text-center">View Work</a>
+        <a href="#contact" class="w-full sm:w-auto px-8 py-3 border border-gray-600 rounded-full hover:border-blue-400 transition-all text-center">Contact Me</a>
       </div>
     </div>
-    <div class="relative flex justify-center fade-up w-72 h-72 mx-auto">
-  <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-100"></div>
-  
-  <img src="assets/profile.jpg" alt="Ayush Kumar Pandit" class="relative w-full h-full object-cover rounded-full border-2 border-white/10 transition duration-500"/>
-</div>
   </div>
 </section>
 
-<section id="skills" class="py-24 bg-black/20">
+<section id="skills" class="py-20 bg-black/20">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <div class="fade-up">
       <h2 class="text-3xl font-bold mb-4 text-white">Technical Arsenal</h2>
       <p class="text-gray-500 mb-12">Tools and technologies I use to bring ideas to life</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Python</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Django</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Flask</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">MySQL</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">C++</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">REST APIs</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Streamlit</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Postman</div>
-        <div class="px-6 py-3 glass rounded-xl hover:border-blue-500/50 hover:text-blue-400 transition-all cursor-default">Git</div>
+      <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+        <div class="px-5 py-2 md:px-6 md:py-3 glass rounded-xl text-sm md:text-base hover:text-blue-400 transition-all">Python</div>
+        <div class="px-5 py-2 md:px-6 md:py-3 glass rounded-xl text-sm md:text-base hover:text-blue-400 transition-all">Django</div>
+        <div class="px-5 py-2 md:px-6 md:py-3 glass rounded-xl text-sm md:text-base hover:text-blue-400 transition-all">Flask</div>
+        <div class="px-5 py-2 md:px-6 md:py-3 glass rounded-xl text-sm md:text-base hover:text-blue-400 transition-all">MySQL</div>
+        <div class="px-5 py-2 md:px-6 md:py-3 glass rounded-xl text-sm md:text-base hover:text-blue-400 transition-all">REST APIs</div>
+        <div class="px-5 py-2 md:px-6 md:py-3 glass rounded-xl text-sm md:text-base hover:text-blue-400 transition-all">Git</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="projects" class="py-24 max-w-6xl mx-auto px-6">
-  <div class="flex justify-between items-end mb-12 fade-up">
-    <div>
-      <h2 class="text-4xl font-bold text-white">Featured Projects</h2>
-      <div class="h-1 w-20 bg-blue-500 mt-2"></div>
-    </div>
+<section id="projects" class="py-20 max-w-6xl mx-auto px-6">
+  <div class="text-center md:text-left mb-12 fade-up">
+    <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
+    <div class="h-1 w-20 bg-blue-500 mt-2 mx-auto md:mx-0"></div>
   </div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="fade-up p-8 glass rounded-2xl hover:-translate-y-2 transition-all group">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div class="fade-up p-6 md:p-8 glass rounded-2xl group">
       <div class="text-blue-500 mb-4 text-3xl">🤖</div>
       <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400">Agentic Monitoring</h3>
       <p class="text-gray-400 text-sm leading-relaxed mb-6">Real-time system health dashboard with automated alerts. Optimized backend latency by 30%.</p>
-      <div class="flex gap-3 text-xs text-blue-400"><span>Python</span> <span>Flask</span> <span>RESTful API</span></div>
+      <div class="flex flex-wrap gap-2 text-xs font-semibold text-blue-400 uppercase">
+        <span class="bg-blue-500/10 px-2 py-1 rounded">Python</span>
+        <span class="bg-blue-500/10 px-2 py-1 rounded">Flask</span>
+      </div>
     </div>
-    <div class="fade-up p-8 glass rounded-2xl hover:-translate-y-2 transition-all group">
-      <div class="text-blue-500 mb-4 text-3xl">💻</div>
-      <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400">Online Compiler</h3>
-      <p class="text-gray-400 text-sm leading-relaxed mb-6">Sandboxed code execution engine using Flask and Judge0 API. Supports 5+ languages.</p>
-      <div class="flex gap-3 text-xs text-blue-400"><span>HTML</span> <span>CSS</span> <span>JS</span> <span>Flask</span></div>
     </div>
-    <div class="fade-up p-8 glass rounded-2xl hover:-translate-y-2 transition-all group">
-      <div class="text-blue-500 mb-4 text-3xl">🚗</div>
-      <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400">Car Rental Website</h3>
-      <p class="text-gray-400 text-sm leading-relaxed mb-6">A full-stack car rental app with real-time listings, booking, and user authentication.</p>
-      <div class="flex gap-3 text-xs text-blue-400"><span>Django</span> <span>MySQL</span></div>
-    </div>
-  </div>
 </section>
 
-<section id="experience" class="py-24 bg-black/20">
+<section id="experience" class="py-20 bg-black/20">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-white mb-12 text-center">Work Experience</h2>
-    <div class="relative border-l-2 border-blue-500/30 ml-4 md:ml-0">
-      <div class="mb-12 ml-8 fade-up relative">
-        <div class="absolute -left-[41px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
-        <div class="flex justify-between items-start flex-wrap gap-2">
+    <div class="relative border-l-2 border-blue-500/30 ml-2 md:ml-0">
+      <div class="mb-12 ml-6 md:ml-8 fade-up relative">
+        <div class="absolute -left-[35px] md:-left-[41px] top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
           <h3 class="text-xl font-bold">Jio Platforms Ltd.</h3>
-          <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Sep 2025 - Oct 2025</span>
+          <span class="inline-block w-fit px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Sep 2025 - Oct 2025</span>
         </div>
-        <p class="text-blue-400 text-sm font-medium mb-4">Backend Intern</p>
+        <p class="text-blue-400 text-sm font-medium my-2">Backend Intern</p>
         <ul class="space-y-3 text-gray-400 text-sm">
           <li class="flex gap-2"><span>•</span> Built high-performance REST APIs using Flask for system telemetry.</li>
-          <li class="flex gap-2"><span>•</span> Modularized legacy scripts reducing technical debt and improving readability.</li>
-          <li class="flex gap-2"><span>•</span> Participated in sprint planning and CI/CD workflows.</li>
+          <li class="flex gap-2"><span>•</span> Modularized legacy scripts reducing technical debt.</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="certificate" class="py-24 max-w-6xl mx-auto px-6">
-  <div class="fade-up mb-12">
-    <h2 class="text-3xl font-bold text-white">Certifications</h2>
-    <div class="h-1 w-20 bg-blue-500 mt-2"></div>
-  </div>
-
-  <div class="fade-up flex gap-6 overflow-x-auto pb-8 snap-x scrollbar-hide" id="cert-slider">
-    <div class="min-w-[300px] md:min-w-[420px] snap-center glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all group">
-      <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-gray-800">
-        <img src="assets/Certificates/Nesternship.png" alt="Certificate" class="w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </div>
-      <h3 class="text-lg font-bold text-white mb-1">Nesternship</h3>
-      <p class="text-blue-400 text-sm mb-4">Nestle India</p>
-      <a href="https://drive.google.com/file/d/11BqjjYVVMEwFl50xrojwhRsIuD2ym3qJ/view?usp=drive_link" target ="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Verify Credentials →</a>
-    </div>
-    <div class="min-w-[300px] md:min-w-[420px] snap-center glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all group">
-      <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-gray-800">
-        <img src="assets/Certificates/Ai for Techies.png" alt="Certificate" class="w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </div>
-      <h3 class="text-lg font-bold text-white mb-1">Python WorkShop</h3>
-      <p class="text-blue-400 text-sm mb-4">AI For Techies</p>
-      <a href="https://drive.google.com/file/d/1oZL9wK85wc_7HSgjhDPoWAjnpud-QWuE/view?usp=drive_link" target ="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Verify Credentials →</a>
-    </div>
-    <div class="min-w-[300px] md:min-w-[420px] snap-center glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all group">
-      <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-gray-800">
-        <img src="assets/Certificates/Forage GEN AI.png" alt="Certificate" class="w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </div>
-      <h3 class="text-lg font-bold text-white mb-1">Gen AI Based Data Analyst</h3>
-      <p class="text-blue-400 text-sm mb-4">Forage Certified</p>
-      <a href="https://drive.google.com/file/d/1rDj3iEd1phiJFKMcpCa-iNs3btzvlD8e/view?usp=drive_link" target ="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Verify Credentials →</a>
-    </div>
-    <div class="min-w-[300px] md:min-w-[420px] snap-center glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all group">
-      <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-gray-800">
-        <img src="assets/Certificates/Python for DS(NPTEL).png" alt="Certificate" class="w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </div>
-      <h3 class="text-lg font-bold text-white mb-1">Python For Data Science</h3>
-      <p class="text-blue-400 text-sm mb-4">NPTEL</p>
-      <a href="https://drive.google.com/file/d/1ZiGAY__24wwwSS77Fmxv7kL7RpUX1uVr/view?usp=drive_link" target ="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Verify Credentials →</a>
-    </div>
-    <div class="min-w-[300px] md:min-w-[420px] snap-center glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all group">
-      <div class="aspect-video mb-6 overflow-hidden rounded-lg bg-gray-800">
-        <img src="assets/Certificates/Python (HackerRank).png" alt="Certificate" class="w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </div>
-      <h3 class="text-lg font-bold text-white mb-1">Python Basics</h3>
-      <p class="text-blue-400 text-sm mb-4">HackerRank Verified</p>
-      <a href="https://drive.google.com/file/d/13zllGMBNpf2ruMdjgLQXmkm-7TedgPPe/view?usp=sharing" target ="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Verify Credentials →</a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="py-24 max-w-4xl mx-auto px-6 text-center">
+<section id="contact" class="py-20 max-w-4xl mx-auto px-6 text-center">
   <div class="fade-up">
-    <h2 class="text-4xl font-bold text-white mb-6">Let's Build Something</h2>
-    <p class="text-gray-400 mb-10">I'm currently looking for new opportunities. My inbox is always open.</p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Let's Build Something</h2>
+    <p class="text-gray-400 mb-10 max-w-md mx-auto">I'm currently looking for new opportunities. My inbox is always open.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+      <a href="mailto:ayushpandit672@gmail.com" class="p-6 glass rounded-2xl hover:border-blue-500/50 transition-all">
+        <p class="text-blue-400 text-xs mb-1 uppercase font-bold">Email</p>
+        <p class="text-sm font-medium truncate">ayushpandit672@gmail.com</p>
+      </a>
+      <a href="tel:+917974508581" class="p-6 glass rounded-2xl hover:border-blue-500/50 transition-all">
+        <p class="text-blue-400 text-xs mb-1 uppercase font-bold">Phone</p>
+        <p class="text-sm font-medium">+91 7974508581</p>
+      </a>
       <div class="p-6 glass rounded-2xl">
-        <p class="text-blue-400 text-sm mb-1">Email</p>
-        <a href="mailto:ayushpandit672@gmail.com" class="text-sm font-medium">ayushpandit672@gmail.com</a>
-      </div>
-      <div class="p-6 glass rounded-2xl">
-        <p class="text-blue-400 text-sm mb-1">Phone</p>
-        <a href="tel:+917974508581">+91 7974508581</a>
-      </div>
-      <div class="p-6 glass rounded-2xl">
-        <p class="text-blue-400 text-sm mb-1">Location</p>
+        <p class="text-blue-400 text-xs mb-1 uppercase font-bold">Location</p>
         <p class="text-sm font-medium">Bhopal, India</p>
       </div>
     </div>
-    <div class="flex justify-center gap-8">
-      <a href="https://github.com/ayush-kumar-pandit" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">GitHub</a>
-      <a href="https://linkedin.com/in/ayush-kumar-pandit" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">LinkedIn</a>
-      <a href="https://drive.google.com/file/d/1wPWxVWb3oNWXbexkqRrx3T9GEuTEqvBL/view?usp=drive_link" target="_blank" class="text-gray-400 hover:text-white transition-all transform hover:scale-110">Resume</a>
+    <div class="flex justify-center gap-6 md:gap-10">
+      <a href="https://github.com/ayush-kumar-pandit" class="text-gray-400 hover:text-white transition-all">GitHub</a>
+      <a href="https://linkedin.com/in/ayush-kumar-pandit" class="text-gray-400 hover:text-white transition-all">LinkedIn</a>
     </div>
   </div>
 </section>
 
-<footer class="py-10 border-t border-white/5 text-center">
-  <p class="text-gray-600 text-sm">Designed & Built by Ayush Kumar Pandit © 2026</p>
+<footer class="py-10 border-t border-white/5 text-center px-6">
+  <p class="text-gray-600 text-xs md:text-sm">Designed & Built by Ayush Kumar Pandit © 2026</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  // Particles Configuration
+  // Mobile Menu Logic
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+
+  // Close menu when clicking a link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+  });
+
+  // Particles
   particlesJS("particles-js", {
     particles: {
-      number: { value: 40, density: { enable: true, value_area: 800 } },
+      number: { value: 30, density: { enable: true, value_area: 800 } },
       color: { value: "#3b82f6" },
-      shape: { type: "circle" },
       opacity: { value: 0.2 },
       size: { value: 2 },
-      line_linked: { enable: true, distance: 150, color: "#3b82f6", opacity: 0.1, width: 1 },
-      move: { enable: true, speed: 1, direction: "none", random: true, out_mode: "out" }
+      line_linked: { enable: true, distance: 150, color: "#3b82f6", opacity: 0.1 },
+      move: { enable: true, speed: 1 }
     }
   });
 
   // Intersection Observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('show');
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   // Typing Effect
-  const words = ["Backend Developer", "Python Enthusiast", "System Architect", "Problem Solver"];
+  const words = ["Backend Developer", "Python Enthusiast", "System Architect"];
   let wordIdx = 0, charIdx = 0, isDeleting = false;
   function type() {
     const currentWord = words[wordIdx];
